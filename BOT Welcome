@@ -1,0 +1,34 @@
+const Discord = require("discord.js");
+const client = new Discord.Client();
+
+client.on("ready", () => {
+    console.log("BOT LISTO!");
+});
+
+client.on("guildMemberAdd", async member => {
+    const canal = member.guild.channels.cache.find(c => c.id === "");
+    if(!canal) return;
+    const embed = new Discord.MessageEmbed()
+    .setAuthor(member.user.username, member.user.displayAvatarURL({format: "png", dynamic: true}))
+    .setDescription(`<@${member.id}> Bienvenid@ a Nuclear Tula :heart: `)
+    .setThumbnail(member.user.displayAvatarURL({format: "png", dynamic: true}))
+    .setColor("RANDOM")
+    .setTimestamp()
+    .setFooter(member.guild.name)
+    canal.send(embed);
+});
+
+client.on("guildMemberRemove", async member => {
+    const canal = member.guild.channels.cache.find(c => c.id === "");
+    if(!canal) return;
+    const embed = new Discord.MessageEmbed()
+    .setAuthor(member.user.username, member.user.displayAvatarURL({format: "png", dynamic: true}))
+    .setDescription(`<@${member.id}> Adios :smiling_face_with_tear: `)
+    .setThumbnail(member.user.displayAvatarURL({format: "png", dynamic: true}))
+    .setColor("RANDOM")
+    .setTimestamp()
+    .setFooter(member.guild.name)
+    canal.send(embed);
+});
+
+client.login("");
