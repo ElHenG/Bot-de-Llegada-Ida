@@ -10,7 +10,7 @@ client.on("guildMemberAdd", async member => {
     if(!canal) return;
     const embed = new Discord.MessageEmbed()
     .setAuthor(member.user.username, member.user.displayAvatarURL({format: "png", dynamic: true}))
-    .setDescription(`<@${member.id}> Bienvenid@ a Nuclear Tula :heart: `)
+    .setDescription(`<@${member.id}> //Mensaje`)
     .setThumbnail(member.user.displayAvatarURL({format: "png", dynamic: true}))
     .setColor("RANDOM")
     .setTimestamp()
@@ -23,7 +23,7 @@ client.on("guildMemberRemove", async member => {
     if(!canal) return;
     const embed = new Discord.MessageEmbed()
     .setAuthor(member.user.username, member.user.displayAvatarURL({format: "png", dynamic: true}))
-    .setDescription(`<@${member.id}> Adios :smiling_face_with_tear: `)
+    .setDescription(`<@${member.id}> //Mensaje`)
     .setThumbnail(member.user.displayAvatarURL({format: "png", dynamic: true}))
     .setColor("RANDOM")
     .setTimestamp()
